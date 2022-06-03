@@ -11,10 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import CartWidget from './CartWidget';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Inicio', 'Productos', 'Contacto'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
@@ -40,7 +40,7 @@ const NavBar = () => {
 		<AppBar position='static'>
 			<Container maxWidth='xl'>
 				<Toolbar disableGutters>
-					<AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+					<AddBusinessIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
 					<Typography
 						variant='h6'
 						noWrap
@@ -56,7 +56,7 @@ const NavBar = () => {
 							textDecoration: 'none',
 						}}
 					>
-						e-SaLe
+					e-SaLe
 					</Typography>
 
 					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -95,7 +95,7 @@ const NavBar = () => {
 							))}
 						</Menu>
 					</Box>
-					<AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+					<AddBusinessIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
 					<Typography
 						variant='h5'
 						noWrap
@@ -112,7 +112,7 @@ const NavBar = () => {
 							textDecoration: 'none',
 						}}
 					>
-						LOGO
+					e-SaLe
 					</Typography>
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 						{pages.map((page) => (
@@ -125,7 +125,6 @@ const NavBar = () => {
 							</Button>
 						))}
 					</Box>
-
 					<Box sx={{ flexGrow: 0 }}>
 						<CartWidget carrito={1} />
 					</Box>
