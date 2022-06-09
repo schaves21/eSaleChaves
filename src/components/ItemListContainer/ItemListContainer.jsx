@@ -19,20 +19,33 @@ const productos = [
 
 const ItemListContainer = ({ greeting }) => {
 
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-
+  const [error, setError] = useState(false);
+ 
   useEffect(() => {
-    const getData = new Promise((resolve, rej) =>{
+    const getData = new Promise((resolve, rej) => {
       setTimeout(() => {
         resolve(productos);  
       }, 2000);
     });
-    getData.then(res => setData(res));
+    getData.then((res) => {
+       setData(res)
+    });
+    getData.catch((error) => {
+      setError(true);
+      console.log(error);
+    });
+    getData.finally(() => {
+      setLoading(false);
+    });
   }, [])
   
   return (
     <>
       <h1 className='myH1'>{greeting}</h1>;
+      <div>{loading && 'Cargando...'}</div>
+      <div>{error && 'Hubo un error en los Productos'}</div>
       <ItemList data={data} />
     </>
   )
